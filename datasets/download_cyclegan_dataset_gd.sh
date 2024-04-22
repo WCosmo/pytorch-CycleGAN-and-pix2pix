@@ -17,5 +17,5 @@ ZIP_FILE=./datasets/$FILE.zip
 TARGET_DIR=./datasets/$FILE/
 wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate $URL -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=${GD_ID}" -O $ZIP_FILE && rm -rf /tmp/cookies.txt
 mkdir $TARGET_DIR
-unzip $ZIP_FILE -d ./datasets/
+unzip $ZIP_FILE -d -q ./datasets/
 rm $ZIP_FILE
